@@ -1,6 +1,6 @@
-import { expect, test } from "vitest"
-import { tasu } from "@/index"
+import { expect, test } from 'vitest'
+import { tasu } from '@/index'
 
-test("tasu", () => {
+test('tasu', () => {
 	expect(tasu(10, 20)).toBe(30)
 })
