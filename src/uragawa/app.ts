@@ -1,9 +1,9 @@
-import { LogKomoku } from '@/kocchi/log'
 import { zValidator } from '@hono/zod-validator'
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import { requestId } from 'hono/request-id'
 import * as z from 'zod'
+import type { LogKomoku } from '@/kocchi/log'
 
 const app = new Hono()
 
@@ -35,17 +35,20 @@ app.post('/author', zValidator('json', aschema), (c) => {
 // request / time / useragent
 app.get('/log', (c) => {
 	const time = Date.now()
-  const log: LogKomoku = {
-		requestid: c.get('requestId'),
+	const log: LogKomoku = {
 		timestamp: time,
-		useragent: c.req.header('User-Agent')
+		requestid: c.get('requestId'),
+		website: c.req.header('Origin'),
+		url: c.req.header('Referer'),
+		language: c.req.header('Accept-Language'),
+		useragent: c.req.header('User-Agent'),
+		event: "load"
 	}
 	if (log) {
 		return c.json(log)
-	} else{
-return c.json("arimasen")
+	} else {
+		return c.json('error')
 	}
 })
-
 
 export default app

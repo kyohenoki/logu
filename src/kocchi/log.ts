@@ -19,7 +19,11 @@ export async function log() {
 }
 
 export type LogKomoku = {
-	requestid: string,
-	timestamp: number,
+	timestamp: number
+	requestid: string
+	website: string | undefined
+	url: string | undefined
+	language: string | undefined
 	useragent: string | undefined
+	event: string
 }
