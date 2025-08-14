@@ -13,9 +13,12 @@ export async function author(name: string, age: number) {
 					age: age
 				}
 			})
-			.json()
+			.json<Author>()
 		return data
 	} catch (err) {
-		return (err as Error).message
+		return {
+			success: false,
+			message: (err as Error).message
+		}
 	}
 }

@@ -1,3 +1,4 @@
+import Kaiwa from './katachi/kaiwa'
 import Nani from './katachi/nani'
 
 export default function App() {
@@ -6,6 +7,7 @@ export default function App() {
 			<h1 className="text-[1.15rem]">logu</h1>
 			<h2 className="text-[1.15rem]">koukokuで使う予定</h2>
 			<Nani className="text-[1.15rem]" />
+			<Kaiwa className="text-[1.15rem]" />
 		</main>
 	)
 }
