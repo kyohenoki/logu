@@ -1,0 +1,21 @@
+{
+	"name": "logu",
+	"version": "0.0.1",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "wrangler dev",
+		"test": "vitest",
+		"check": "biome check --write"
+	},
+	"dependencies": {
+		"hono": "^4.9.1",
+		"wrangler": "^4.29.1",
+		"zod": "^4.0.17"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.1.4",
+		"typescript": "^5.9.2",
+		"vitest": "^3.2.4"
+	}
+}
